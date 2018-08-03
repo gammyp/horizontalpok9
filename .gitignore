@@ -21,3 +21,10 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/Horizontalpok9/nbproject/private/
+/Horizontalpok9/Horizontalpok9-war/nbproject/private/
+/Horizontalpok9/Horizontalpok9-ejb/nbproject/private/
+/Horizontalpok9/Horizontalpok9-war/build/
+/Horizontalpok9/Horizontalpok9-ejb/dist/
+/Horizontalpok9/Horizontalpok9-ejb/build/
+/Horizontalpok9/build/
