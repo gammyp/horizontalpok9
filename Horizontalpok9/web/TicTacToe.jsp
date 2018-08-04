@@ -68,36 +68,36 @@
                    <div id="placeholder">
                         <table id="tic-tac-toe">
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td id="R1_C1"></td>
+                                    <td id="R1_C2"></td>
+                                    <td id="R1_C3"></td>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td id="R2_C1"></td>
+                                    <td id="R2_C2"></td>
+                                    <td id="R2_C3"></td>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td id="R3_C1"></td>
+                                    <td id="R3_C2"></td>
+                                    <td id="R3_C3"></td>
                                 </tr>
                         </table>
                        
                        <table id="scoreboard" align="center">
                             <tr>
-                              <td> Player 1 </td>
+                              <td> Player 1 (X)</td>
                               <td width="30"> &nbsp; </td>
                               <td> Tie </td>
                               <td width="30"> &nbsp; </td>
-                              <td> Player 2 </td>
+                              <td> Player 2 (O)</td>
                             </tr>
                             <tr>
                               <td class="score" id="player1">
                                 0 
                               </td>
                               <td> &nbsp; </td>
-                              <td class="score" id="player2">
+                              <td class="score" id="tie">
                                 0 
                               </td>
                               <td> &nbsp; </td>
