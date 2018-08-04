@@ -119,11 +119,10 @@ public class xoModel {
     }
 
 
-    public int[] clearBoard(int[] board) {
+    public void clearBoard() {
         for (int index=0; index < 9; index++) {
-            board[index] = 0;
+            arrayOfBoard[index] = 0;
         }
-        return board;
     }
 
 
