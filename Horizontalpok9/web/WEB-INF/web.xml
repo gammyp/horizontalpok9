@@ -4,9 +4,17 @@
         <servlet-name>startXOServlet</servlet-name>
         <servlet-class>controller.startXOServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>processServlet</servlet-name>
+        <servlet-class>controller.processServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>startXOServlet</servlet-name>
         <url-pattern>/Horizontalpok9</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>processServlet</servlet-name>
+        <url-pattern>/process</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
