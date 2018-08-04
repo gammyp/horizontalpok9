@@ -11,28 +11,24 @@ package model;
  */
 public class xoModel {
 
+
     private int turn,tieScore,winScorePlayer1,winScorePlayer2;
-
-
-    
-    private byte[] arrayOfBoard = new byte[9];
+    private int[] arrayOfBoard = new int[9];
 
 
     public int getTurn() {
         return turn;
     }
 
-
-   
-
-    public byte[] getArrayOfBoard() {
+    public int[] getArrayOfBoard() {
         return arrayOfBoard;
         
     }
 
-    public void setArrayOfBoard(byte[] arrayOfBoard) {
+    public void setArrayOfBoard(int[] arrayOfBoard) {
         this.arrayOfBoard = arrayOfBoard;
     }
+
 
     public void setTurn(int turn) {
         this.turn = turn;
@@ -68,22 +64,23 @@ public class xoModel {
         return afterMod;
     }
 
+   
+
+
+    public void setArrayOfBoard(int i,int val) {
+        this.arrayOfBoard[i] = val;
+    }
 
     
-    
-    
-    
-    
-
-    public boolean checkDiagoanl() {
+    public boolean checkDiagoanl(int player) {
         boolean result = false;
-        if (this.arrayOfBoard[1] != 0) {
-            if (this.arrayOfBoard[0] == this.arrayOfBoard[4] && this.arrayOfBoard[0] == this.arrayOfBoard[8]) {
+        
+            if (this.arrayOfBoard[0] == player && this.arrayOfBoard[4] == player && this.arrayOfBoard[8] == player) {
                 result = true;
-            } else if (this.arrayOfBoard[2] == this.arrayOfBoard[4] && this.arrayOfBoard[2] == this.arrayOfBoard[6]) {
+            } else if (this.arrayOfBoard[2] == player && this.arrayOfBoard[4] == player && this.arrayOfBoard[6] == player) {
                 result = true;
             }
-        }
+        
 
         return result;
     }

@@ -21,14 +21,18 @@ import static org.junit.Assert.*;
 public class xoModeltest {
     
     @Test
-    public void checkDiagonalIsWin() {
+    public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้False() {
        xoModel xs = new xoModel();
-       xs.checkDiagoanl();
-        for(int i=0; i<9;i++){
-            System.out.println(xs.getArrayOfBoard()[i]);
-        }
        
-        assertEquals(false, xs.checkDiagoanl());
+        assertEquals(false, xs.checkDiagoanl(1));
+    }
+    @Test
+    public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้True() {
+       xoModel xs = new xoModel();
+       xs.setArrayOfBoard(0,1);
+       xs.setArrayOfBoard(4,1);
+       xs.setArrayOfBoard(8,1);
+        assertEquals(true, xs.checkDiagoanl(1));
     }
     
     
