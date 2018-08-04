@@ -178,7 +178,13 @@ public class xoModelTest {
         assertEquals(expectedOutput,output);
     }
      
-    
+     @Test
+      public void addXOใส่xลงในช่องที่3ต้องมีค่าเป็น1(){
+        
+        xoModel in = new xoModel();
+        in.addXO(3, 1);
+        assertEquals(in.getArrayOfBoard()[3],1);
+    }
     
     
     

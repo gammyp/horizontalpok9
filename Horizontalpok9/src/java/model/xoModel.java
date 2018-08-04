@@ -35,9 +35,7 @@ public class xoModel {
         
     }
 
-    public void setArrayOfBoard(int[] arrayOfBoard) {
-        this.arrayOfBoard = arrayOfBoard;
-    }
+
 
     public void setTurn(int turn) {
         this.turn = turn;
@@ -140,6 +138,8 @@ public class xoModel {
         return board;
     }
 
-
+    public void addXO(int index,int symbolXO){
+        this.setArrayOfBoard(index, symbolXO);
+    }
 
 }
