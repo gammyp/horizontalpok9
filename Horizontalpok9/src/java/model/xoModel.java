@@ -119,11 +119,29 @@ public class xoModel {
     }
 
 
-    public void clearBoard() {
+
+  
+
+    public boolean checkHorizontal(int player) {
+        boolean result = false;
+        if(this.arrayOfBoard[0] == player && this.arrayOfBoard[1] == player && this.arrayOfBoard[2] == player ){
+            result = true;
+        } else if (this.arrayOfBoard[3] == player && this.arrayOfBoard[4] == player && this.arrayOfBoard[5] == player ){
+            result = true;
+        } else if(this.arrayOfBoard[6] == player && this.arrayOfBoard[7] == player && this.arrayOfBoard[8] == player ){
+            result = true;
+        }
+        return result;
+    }
+
+
+
+   public void clearBoard() {
         for (int index=0; index < 9; index++) {
             arrayOfBoard[index] = 0;
         }
     }
+
 
 
 }
