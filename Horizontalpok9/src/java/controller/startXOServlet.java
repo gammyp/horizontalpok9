@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.xoModel;
 
 /**
  *
@@ -30,10 +31,12 @@ public class startXOServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        xoModel xoModel = new xoModel();
         HttpSession session = request.getSession();
-        request.setAttribute("player1score", 0);
-        request.setAttribute("tiescore", 0);
-        request.setAttribute("player2score", 0);
+        request.setAttribute("player1score", xoModel.getWinScorePlayer1());
+        request.setAttribute("tiescore", xoModel.getTieScore());
+        request.setAttribute("player2score", xoModel.getWinScorePlayer2());
+        request.setAttribute("turn", xoModel.getTurn());
         getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
