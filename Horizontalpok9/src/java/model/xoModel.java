@@ -10,38 +10,49 @@ package model;
  * @author abyss
  */
 public class xoModel {
-    private byte turn,tieScore,winScorePlayer1,winScorePlayer2;
+    private int turn,tieScore,winScorePlayer1,winScorePlayer2;
 
-    public byte getTurn() {
+    public int getTurn() {
         return turn;
     }
 
-    public void setTurn(byte turn) {
+    public void setTurn(int turn) {
         this.turn = turn;
     }
 
-    public byte getTieScore() {
+    public int getTieScore() {
         return tieScore;
     }
 
-    public void setTieScore(byte tieScore) {
+    public void setTieScore(int tieScore) {
         this.tieScore = tieScore;
     }
 
-    public byte getWinScorePlayer1() {
+    public int getWinScorePlayer1() {
         return winScorePlayer1;
     }
 
-    public void setWinScorePlayer1(byte winScorePlayer1) {
+    public void setWinScorePlayer1(int winScorePlayer1) {
         this.winScorePlayer1 = winScorePlayer1;
     }
 
-    public byte getWinScorePlayer2() {
+    public int getWinScorePlayer2() {
         return winScorePlayer2;
     }
 
-    public void setWinScorePlayer2(byte winScorePlayer2) {
+    public void setWinScorePlayer2(int winScorePlayer2) {
         this.winScorePlayer2 = winScorePlayer2;
     }
+
+    int checkTurn(int turn) {
+        int afterMod = turn%2;
+        return afterMod;
+    }
+
+
+    
+    
+    
+    
     
 }
