@@ -33,10 +33,15 @@ public class startXOServlet extends HttpServlet {
             throws ServletException, IOException {
         xoModel xoModel = new xoModel();
         HttpSession session = request.getSession();
-        request.setAttribute("player1score", xoModel.getWinScorePlayer1());
-        request.setAttribute("tiescore", xoModel.getTieScore());
-        request.setAttribute("player2score", xoModel.getWinScorePlayer2());
-        request.setAttribute("turn", xoModel.getTurn());
+        if (session.getAttribute("player1score").equals(null) || session.getAttribute("player2score").equals(null) || session.getAttribute("tiescore").equals(null)) {
+            request.setAttribute("player1score", xoModel.getWinScorePlayer1());
+            request.setAttribute("tiescore", xoModel.getTieScore());
+            request.setAttribute("player2score", xoModel.getWinScorePlayer2());
+            request.setAttribute("turn", xoModel.getTurn());
+        }
+        else {
+            
+        }
         getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
