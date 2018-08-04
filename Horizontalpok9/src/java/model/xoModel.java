@@ -133,6 +133,9 @@ public class xoModel {
     }
 
 
+
+  
+
     public boolean checkHorizontal(int player) {
         boolean result = false;
         if(this.arrayOfBoard[0] == player && this.arrayOfBoard[1] == player && this.arrayOfBoard[2] == player ){
@@ -147,11 +150,10 @@ public class xoModel {
 
 
 
-    public int[] clearBoard(int[] board) {
+   public void clearBoard() {
         for (int index=0; index < 9; index++) {
-            board[index] = 0;
+            arrayOfBoard[index] = 0;
         }
-        return board;
     }
 
 
