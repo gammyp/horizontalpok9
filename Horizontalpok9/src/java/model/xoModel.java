@@ -10,10 +10,28 @@ package model;
  * @author abyss
  */
 public class xoModel {
+
     private int turn,tieScore,winScorePlayer1,winScorePlayer2;
+
+
+    
+    private byte[] arrayOfBoard = new byte[9];
+
 
     public int getTurn() {
         return turn;
+    }
+
+
+   
+
+    public byte[] getArrayOfBoard() {
+        return arrayOfBoard;
+        
+    }
+
+    public void setArrayOfBoard(byte[] arrayOfBoard) {
+        this.arrayOfBoard = arrayOfBoard;
     }
 
     public void setTurn(int turn) {
@@ -44,6 +62,7 @@ public class xoModel {
         this.winScorePlayer2 = winScorePlayer2;
     }
 
+
     int checkTurn(int turn) {
         int afterMod = turn%2;
         return afterMod;
@@ -55,4 +74,19 @@ public class xoModel {
     
     
     
+
+    public boolean checkDiagoanl() {
+        boolean result = false;
+        if (this.arrayOfBoard[1] != 0) {
+            if (this.arrayOfBoard[0] == this.arrayOfBoard[4] && this.arrayOfBoard[0] == this.arrayOfBoard[8]) {
+                result = true;
+            } else if (this.arrayOfBoard[2] == this.arrayOfBoard[4] && this.arrayOfBoard[2] == this.arrayOfBoard[6]) {
+                result = true;
+            }
+        }
+
+        return result;
+    }
+
+
 }
