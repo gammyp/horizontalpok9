@@ -20,17 +20,37 @@ import static org.junit.Assert.*;
  */
 public class xoModeltest {
     
+    xoModel xoModel = new xoModel();
+    
     @Test
-    public void checkDiagonalIsWin() {
-       xoModel xs = new xoModel();
-       xs.checkDiagoanl();
-        for(int i=0; i<9;i++){
-            System.out.println(xs.getArrayOfBoard()[i]);
-        }
-       
-        assertEquals(false, xs.checkDiagoanl());
+    public void testUserModel() {
+        //try to get player 1 and 2.
+        assertEquals("Player1", xoModel.getPlayer1());
+        assertEquals("Player2", xoModel.getPlayer2());
+        //try to insert value to array.
+        xoModel.insertValueToArray(1, 2);
+        xoModel.insertValueToArray(1, 1);
+        xoModel.insertValueToArray(2, 1);
+        //try to return value from array by method.
+        assertEquals(xoModel.getArrayOfBoard()[1], 2);
+        assertEquals(xoModel.getArrayOfBoard()[2], 1);
     }
     
+    public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้False() {
+       xoModel xs = new xoModel();
+       
+        assertEquals(false, xs.checkDiagoanl(1));
+    }
+    @Test
+    public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้True() {
+       xoModel xs = new xoModel();
+       xs.setArrayOfBoard(0,1);
+       xs.setArrayOfBoard(4,1);
+       xs.setArrayOfBoard(8,1);
+        assertEquals(true, xs.checkDiagoanl(1));
+    }
+    
+
     @Test
     public void เรียกใช้ฟังก์ชันclearBoardต้องได้บอร์ดเปล่า() {
         int[] board = {1,2,1,2,1,2,1,2,2};
@@ -40,8 +60,6 @@ public class xoModeltest {
             assertEquals(emptyBoard[i], 0);
         }
     }
-    
-    
     
     
 }

@@ -5,68 +5,112 @@
  */
 package model;
 
+import java.lang.reflect.Array;
+
 /**
  *
  * @author abyss
  */
 public class xoModel {
+    private int turn,tieScore,winScorePlayer1,winScorePlayer2;
+    private String player1,player2;
+    private int[] arrayOfBoard;
 
-    private byte turn, tieScore, winScorePlayer1, winScorePlayer2;
-    private byte[] arrayOfBoard = new byte[9];
+    public xoModel() {
+        this.turn = 1;
+        this.tieScore = 0;
+        this.winScorePlayer1 = 0;
+        this.winScorePlayer2 = 0;
+        this.player1 = "Player1";
+        this.player2 = "Player2";
+        this.arrayOfBoard = new int[9];
+    }
 
-    public byte getTurn() {
+    public int getTurn() {
         return turn;
     }
 
-    public byte[] getArrayOfBoard() {
+    public int[] getArrayOfBoard() {
         return arrayOfBoard;
         
     }
 
-    public void setArrayOfBoard(byte[] arrayOfBoard) {
+    public void setArrayOfBoard(int[] arrayOfBoard) {
         this.arrayOfBoard = arrayOfBoard;
     }
 
-    public void setTurn(byte turn) {
+    public void setTurn(int turn) {
         this.turn = turn;
     }
 
-    public byte getTieScore() {
+    public int getTieScore() {
         return tieScore;
     }
 
-    public void setTieScore(byte tieScore) {
+    public void setTieScore(int tieScore) {
         this.tieScore = tieScore;
     }
 
-    public byte getWinScorePlayer1() {
+    public int getWinScorePlayer1() {
         return winScorePlayer1;
     }
 
-    public void setWinScorePlayer1(byte winScorePlayer1) {
+    public void setWinScorePlayer1(int winScorePlayer1) {
         this.winScorePlayer1 = winScorePlayer1;
     }
 
-    public byte getWinScorePlayer2() {
+    public int getWinScorePlayer2() {
         return winScorePlayer2;
     }
 
-    public void setWinScorePlayer2(byte winScorePlayer2) {
+    public void setWinScorePlayer2(int winScorePlayer2) {
         this.winScorePlayer2 = winScorePlayer2;
     }
 
-    public boolean checkDiagoanl() {
+    public String getPlayer1() {
+        return player1;
+    }
+
+    public String getPlayer2() {
+        return player2;
+    }
+
+    public void setPlayer1(String player1) {
+        this.player1 = player1;
+    }
+
+    public void setPlayer2(String player2) {
+        this.player2 = player2;
+    }
+    
+    public void insertValueToArray(int selected, int value) {
+        if (this.arrayOfBoard[selected] == 0) {
+            this.arrayOfBoard[selected] = value;
+        } else {
+            System.err.println("This block had value!!");
+        }
+    }
+
+    int checkTurn(int turn) {
+        int afterMod = turn%2;
+        return afterMod;
+    }
+
+    public void setArrayOfBoard(int i,int val) {
+        this.arrayOfBoard[i] = val;
+    }
+    
+    public boolean checkDiagoanl(int player) {
         boolean result = false;
-        if (this.arrayOfBoard[1] != 0) {
-            if (this.arrayOfBoard[0] == this.arrayOfBoard[4] && this.arrayOfBoard[0] == this.arrayOfBoard[8]) {
+        
+            if (this.arrayOfBoard[0] == player && this.arrayOfBoard[4] == player && this.arrayOfBoard[8] == player) {
                 result = true;
-            } else if (this.arrayOfBoard[2] == this.arrayOfBoard[4] && this.arrayOfBoard[2] == this.arrayOfBoard[6]) {
+            } else if (this.arrayOfBoard[2] == player && this.arrayOfBoard[4] == player && this.arrayOfBoard[6] == player) {
                 result = true;
             }
-        }
-
         return result;
     }
+
 
     public int[] clearBoard(int[] board) {
         for (int index=0; index < 9; index++) {
@@ -74,5 +118,6 @@ public class xoModel {
         }
         return board;
     }
+
 
 }
