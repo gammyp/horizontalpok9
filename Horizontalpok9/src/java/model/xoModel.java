@@ -61,11 +61,14 @@ public class xoModel {
 
     int checkTurn(int turn) {
         int afterMod = turn%2;
-        return afterMod;
-    }
-
-   
-
+        int symbolXO = 1;
+        if(afterMod==0){
+             symbolXO = 2;
+        }else{
+             symbolXO = 1;
+        }
+        return symbolXO;
+    }   
 
     public void setArrayOfBoard(int i,int val) {
         this.arrayOfBoard[i] = val;
