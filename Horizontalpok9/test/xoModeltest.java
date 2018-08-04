@@ -27,7 +27,7 @@ public class xoModeltest {
 //        assertEquals(false, xs.checkDiaonl(1));
 //    }
    /* @Test
-=======
+
     xoModel xoModel = new xoModel();
     
     @Test
