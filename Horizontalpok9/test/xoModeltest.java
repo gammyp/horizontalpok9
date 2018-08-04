@@ -6,6 +6,7 @@
 
 import javax.naming.spi.DirStateFactory;
 import javax.naming.spi.DirStateFactory.Result;
+import model.xoModel;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -20,7 +21,13 @@ import static org.junit.Assert.*;
 public class xoModeltest {
     
     @Test
-    public void testCreateUser() {
-        assertTrue(false);
+    public void checkDiagonalIsWin() {
+       xoModel xs = new xoModel();
+       xs.checkDiagoanl();
+        for(int i=0; i<9;i++){
+            System.out.println(xs.getArrayOfBoard()[i]);
+        }
+       
+        assertEquals(false, xs.checkDiagoanl());
     }
 }
