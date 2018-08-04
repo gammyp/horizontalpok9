@@ -11,59 +11,59 @@ package model;
  */
 public class xoModel {
 
-    private byte turn, tieScore, winScorePlayer1, winScorePlayer2;
-    private byte[] arrayOfBoard = new byte[9];
+    private int turn, tieScore, winScorePlayer1, winScorePlayer2;
+    private int[] arrayOfBoard = new int[9];
 
-    public byte getTurn() {
+    public int getTurn() {
         return turn;
     }
 
-    public byte[] getArrayOfBoard() {
-        return arrayOfBoard;
-        
-    }
-
-    public void setArrayOfBoard(byte[] arrayOfBoard) {
-        this.arrayOfBoard = arrayOfBoard;
-    }
-
-    public void setTurn(byte turn) {
+    public void setTurn(int turn) {
         this.turn = turn;
     }
 
-    public byte getTieScore() {
+    public int getTieScore() {
         return tieScore;
     }
 
-    public void setTieScore(byte tieScore) {
+    public void setTieScore(int tieScore) {
         this.tieScore = tieScore;
     }
 
-    public byte getWinScorePlayer1() {
+    public int getWinScorePlayer1() {
         return winScorePlayer1;
     }
 
-    public void setWinScorePlayer1(byte winScorePlayer1) {
+    public void setWinScorePlayer1(int winScorePlayer1) {
         this.winScorePlayer1 = winScorePlayer1;
     }
 
-    public byte getWinScorePlayer2() {
+    public int getWinScorePlayer2() {
         return winScorePlayer2;
     }
 
-    public void setWinScorePlayer2(byte winScorePlayer2) {
+    public void setWinScorePlayer2(int winScorePlayer2) {
         this.winScorePlayer2 = winScorePlayer2;
     }
 
-    public boolean checkDiagoanl() {
+    public int[] getArrayOfBoard() {
+        return arrayOfBoard;
+    }
+
+    public void setArrayOfBoard(int i,int val) {
+        this.arrayOfBoard[i] = val;
+    }
+
+    
+    public boolean checkDiagoanl(int player) {
         boolean result = false;
-        if (this.arrayOfBoard[1] != 0) {
-            if (this.arrayOfBoard[0] == this.arrayOfBoard[4] && this.arrayOfBoard[0] == this.arrayOfBoard[8]) {
+        
+            if (this.arrayOfBoard[0] == player && this.arrayOfBoard[4] == player && this.arrayOfBoard[8] == player) {
                 result = true;
-            } else if (this.arrayOfBoard[2] == this.arrayOfBoard[4] && this.arrayOfBoard[2] == this.arrayOfBoard[6]) {
+            } else if (this.arrayOfBoard[2] == player && this.arrayOfBoard[4] == player && this.arrayOfBoard[6] == player) {
                 result = true;
             }
-        }
+        
 
         return result;
     }
