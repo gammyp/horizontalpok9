@@ -5,17 +5,38 @@
  */
 package model;
 
+import java.lang.reflect.Array;
+
 /**
  *
  * @author abyss
  */
 public class xoModel {
+    private int turn,tieScore,winScorePlayer1,winScorePlayer2;
+    private String player1,player2;
+    private int[] arrayOfBoard;
 
-    private int turn, tieScore, winScorePlayer1, winScorePlayer2;
-    private int[] arrayOfBoard = new int[9];
+    public xoModel() {
+        this.turn = 1;
+        this.tieScore = 0;
+        this.winScorePlayer1 = 0;
+        this.winScorePlayer2 = 0;
+        this.player1 = "Player1";
+        this.player2 = "Player2";
+        this.arrayOfBoard = new int[9];
+    }
 
     public int getTurn() {
         return turn;
+    }
+
+    public int[] getArrayOfBoard() {
+        return arrayOfBoard;
+        
+    }
+
+    public void setArrayOfBoard(int[] arrayOfBoard) {
+        this.arrayOfBoard = arrayOfBoard;
     }
 
     public void setTurn(int turn) {
@@ -46,14 +67,45 @@ public class xoModel {
         this.winScorePlayer2 = winScorePlayer2;
     }
 
-    public int[] getArrayOfBoard() {
-        return arrayOfBoard;
+    public String getPlayer1() {
+        return player1;
     }
+
+    public String getPlayer2() {
+        return player2;
+    }
+
+    public void setPlayer1(String player1) {
+        this.player1 = player1;
+    }
+
+    public void setPlayer2(String player2) {
+        this.player2 = player2;
+    }
+    
+    public void insertValueToArray(int selected, int value) {
+        if (this.arrayOfBoard[selected] == 0) {
+            this.arrayOfBoard[selected] = value;
+        } else {
+            System.err.println("This block had value!!");
+        }
+    }
+
+    int checkTurn(int turn) {
+        int afterMod = turn%2;
+        int symbolXO = 1;
+        if(afterMod==0){
+             symbolXO = 2;
+        }else{
+             symbolXO = 1;
+        }
+        return symbolXO;
+    }
+
 
     public void setArrayOfBoard(int i,int val) {
         this.arrayOfBoard[i] = val;
     }
-
     
     public boolean checkDiagoanl(int player) {
         boolean result = false;
@@ -63,8 +115,6 @@ public class xoModel {
             } else if (this.arrayOfBoard[2] == player && this.arrayOfBoard[4] == player && this.arrayOfBoard[6] == player) {
                 result = true;
             }
-        
-
         return result;
     }
      public boolean checkVertical(int player) {
@@ -78,6 +128,16 @@ public class xoModel {
                 result = true;
             } 
 
+
         return result;
     }
+
+
+    public int[] clearBoard(int[] board) {
+        for (int index=0; index < 9; index++) {
+            board[index] = 0;
+        }
+        return board;
+    }
+
 }

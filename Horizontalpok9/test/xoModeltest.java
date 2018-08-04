@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  * @author Game
  */
 public class xoModeltest {
-    
+
 //    @Test
 //    public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้False() {
 //       xoModel xs = new xoModel();
@@ -27,6 +27,30 @@ public class xoModeltest {
 //        assertEquals(false, xs.checkDiaonl(1));
 //    }
    /* @Test
+=======
+    xoModel xoModel = new xoModel();
+    
+    @Test
+    public void testUserModel() {
+        //try to get player 1 and 2.
+        assertEquals("Player1", xoModel.getPlayer1());
+        assertEquals("Player2", xoModel.getPlayer2());
+        //try to insert value to array.
+        xoModel.insertValueToArray(1, 2);
+        xoModel.insertValueToArray(1, 1);
+        xoModel.insertValueToArray(2, 1);
+        //try to return value from array by method.
+        assertEquals(xoModel.getArrayOfBoard()[1], 2);
+        assertEquals(xoModel.getArrayOfBoard()[2], 1);
+    }
+    
+    public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้False() {
+       xoModel xs = new xoModel();
+       
+        assertEquals(false, xs.checkDiagoanl(1));
+    }
+    @Test
+>>>>>>> 9b62d547e7fcad383580f010a85ab8e815b93d04
     public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้True() {
        xoModel xs = new xoModel();
        xs.setArrayOfBoard(0,1);
@@ -50,4 +74,17 @@ public class xoModeltest {
         xs.setArrayOfBoard(3, 1);
          assertEquals(false, xs.checkVertical(1));
     }
+    
+
+    @Test
+    public void เรียกใช้ฟังก์ชันclearBoardต้องได้บอร์ดเปล่า() {
+        int[] board = {1,2,1,2,1,2,1,2,2};
+        xoModel x = new xoModel();
+        int[] emptyBoard = x.clearBoard(board);
+        for (int i = 0; i < 9; i++) {
+            assertEquals(emptyBoard[i], 0);
+        }
+    }
+    
+    
 }
