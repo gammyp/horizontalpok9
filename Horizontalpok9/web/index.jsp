@@ -94,7 +94,7 @@
                             </tr>
                             <tr>
                               <td class="score" id="player1">
-                                ${player1score}} 
+                                ${player1score}
                               </td>
                               <td> &nbsp; </td>
                               <td class="score" id="tie">
