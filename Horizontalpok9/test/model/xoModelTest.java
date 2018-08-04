@@ -25,7 +25,7 @@ public class xoModelTest {
     @Test
     public void testGetTurn() {
         xoModel instance = new xoModel();
-        int expResult = 0;
+        int expResult = 1;
         int result = instance.getTurn();
         assertEquals(expResult, result);
     }
@@ -116,7 +116,7 @@ public class xoModelTest {
     
      public void checkTurn2ต้องได้0(){  
         int turn=2;
-        int expectedOutput=0;
+        int expectedOutput=2;
         xoModel instance = new xoModel();
         int output = instance.checkTurn(turn);
         assertEquals(expectedOutput,output);
@@ -132,7 +132,7 @@ public class xoModelTest {
      
       public void checkTurn4ต้องได้0(){  
         int turn=4;
-        int expectedOutput=0;
+        int expectedOutput=2;
         xoModel instance = new xoModel();
         int output = instance.checkTurn(turn);
         assertEquals(expectedOutput,output);
@@ -148,7 +148,7 @@ public class xoModelTest {
      
       public void checkTurn6ต้องได้0(){  
         int turn=6;
-        int expectedOutput=0;
+        int expectedOutput=2;
         xoModel instance = new xoModel();
         int output = instance.checkTurn(turn);
         assertEquals(expectedOutput,output);
@@ -164,7 +164,7 @@ public class xoModelTest {
      
     public void checkTurn8ต้องได้0(){  
         int turn=8;
-        int expectedOutput=0;
+        int expectedOutput=2;
         xoModel instance = new xoModel();
         int output = instance.checkTurn(turn);
         assertEquals(expectedOutput,output);
@@ -177,6 +177,8 @@ public class xoModelTest {
         int output = instance.checkTurn(turn);
         assertEquals(expectedOutput,output);
     }
+     
+    
     
     
     
