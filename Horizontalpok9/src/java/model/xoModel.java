@@ -118,6 +118,20 @@ public class xoModel {
             }
         return result;
     }
+     public boolean checkVertical(int player) {
+        boolean result = false;
+        
+            if (this.arrayOfBoard[0] == player && this.arrayOfBoard[3] == player && this.arrayOfBoard[6] == player) {
+                result = true;
+            } else if (this.arrayOfBoard[1] == player && this.arrayOfBoard[4] == player && this.arrayOfBoard[7] == player) {
+                result = true;
+            }else if (this.arrayOfBoard[2] == player && this.arrayOfBoard[5] == player && this.arrayOfBoard[8] == player) {
+                result = true;
+            } 
+
+
+        return result;
+    }
 
 
 
@@ -150,7 +164,6 @@ public class xoModel {
            this.winScorePlayer2 += 1;
        }
    }
-
 
 
 }
