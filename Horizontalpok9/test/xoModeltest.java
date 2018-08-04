@@ -19,7 +19,15 @@ import static org.junit.Assert.*;
  * @author Game
  */
 public class xoModeltest {
-    
+
+//    @Test
+//    public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้False() {
+//       xoModel xs = new xoModel();
+//       
+//        assertEquals(false, xs.checkDiaonl(1));
+//    }
+   /* @Test
+
     xoModel xoModel = new xoModel();
     
     @Test
@@ -42,12 +50,29 @@ public class xoModeltest {
         assertEquals(false, xs.checkDiagoanl(1));
     }
     @Test
+>>>>>>> 9b62d547e7fcad383580f010a85ab8e815b93d04
     public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้True() {
        xoModel xs = new xoModel();
        xs.setArrayOfBoard(0,1);
        xs.setArrayOfBoard(4,1);
        xs.setArrayOfBoard(8,1);
         assertEquals(true, xs.checkDiagoanl(1));
+    }*/
+    @Test
+    public void เทสแนวตั้งwin(){
+        xoModel xs = new xoModel();
+        xs.setArrayOfBoard(1, 1);
+        xs.setArrayOfBoard(4, 1);
+        xs.setArrayOfBoard(7, 1);
+         assertEquals(true, xs.checkVertical(1));
+    }
+    @Test
+    public void เทสแนวตั้งไม่ชนะ(){
+        xoModel xs = new xoModel();
+        xs.setArrayOfBoard(1, 1);
+        xs.setArrayOfBoard(2, 1);
+        xs.setArrayOfBoard(3, 1);
+         assertEquals(false, xs.checkVertical(1));
     }
     
 
@@ -55,9 +80,9 @@ public class xoModeltest {
     public void เรียกใช้ฟังก์ชันclearBoardต้องได้บอร์ดเปล่า() {
         int[] board = {1,2,1,2,1,2,1,2,2};
         xoModel x = new xoModel();
-        int[] emptyBoard = x.clearBoard(board);
+        x.clearBoard();
         for (int i = 0; i < 9; i++) {
-            assertEquals(emptyBoard[i], 0);
+            assertEquals(x.getArrayOfBoard()[i], 0);
         }
     }
     

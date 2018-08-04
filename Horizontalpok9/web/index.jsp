@@ -94,15 +94,15 @@
                             </tr>
                             <tr>
                               <td class="score" id="player1">
-                                0 
+                                ${player1score}
                               </td>
                               <td> &nbsp; </td>
                               <td class="score" id="tie">
-                                0 
+                                ${tiescore} 
                               </td>
                               <td> &nbsp; </td>
                               <td class="score" id="player2">
-                                0 
+                                ${player2score} 
                               </td>
                             </tr>
                       </table>
