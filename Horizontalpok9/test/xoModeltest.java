@@ -30,4 +30,18 @@ public class xoModeltest {
        
         assertEquals(false, xs.checkDiagoanl());
     }
+    
+    @Test
+    public void เรียกใช้ฟังก์ชันclearBoardต้องได้บอร์ดเปล่า() {
+        int[] board = {1,2,1,2,1,2,1,2,2};
+        xoModel x = new xoModel();
+        int[] emptyBoard = x.clearBoard(board);
+        for (int i = 0; i < 9; i++) {
+            assertEquals(emptyBoard[i], 0);
+        }
+    }
+    
+    
+    
+    
 }

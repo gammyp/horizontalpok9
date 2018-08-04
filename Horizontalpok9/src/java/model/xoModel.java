@@ -68,4 +68,11 @@ public class xoModel {
         return result;
     }
 
+    public int[] clearBoard(int[] board) {
+        for (int index=0; index < 9; index++) {
+            board[index] = 0;
+        }
+        return board;
+    }
+
 }
