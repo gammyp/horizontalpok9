@@ -12,7 +12,6 @@ import java.lang.reflect.Array;
  * @author abyss
  */
 public class xoModel {
-<<<<<<< HEAD
     private int turn,tieScore,winScorePlayer1,winScorePlayer2;
     private String player1,player2;
     private int[] arrayOfBoard;
@@ -27,20 +26,10 @@ public class xoModel {
         this.arrayOfBoard = new int[9];
     }
 
-=======
-
-
-    private int turn,tieScore,winScorePlayer1,winScorePlayer2;
-    private int[] arrayOfBoard = new int[9];
-
-
->>>>>>> 084582572b2acbd743a1d7e610de6eb847a6571f
     public int getTurn() {
         return turn;
     }
 
-<<<<<<< HEAD
-=======
     public int[] getArrayOfBoard() {
         return arrayOfBoard;
         
@@ -50,8 +39,6 @@ public class xoModel {
         this.arrayOfBoard = arrayOfBoard;
     }
 
-
->>>>>>> 084582572b2acbd743a1d7e610de6eb847a6571f
     public void setTurn(int turn) {
         this.turn = turn;
     }
@@ -80,7 +67,6 @@ public class xoModel {
         this.winScorePlayer2 = winScorePlayer2;
     }
 
-<<<<<<< HEAD
     public String getPlayer1() {
         return player1;
     }
@@ -97,10 +83,6 @@ public class xoModel {
         this.player2 = player2;
     }
     
-    public int[] getArrayOfBoard() {
-        return arrayOfBoard;
-    }
-    
     public void insertValueToArray(int selected, int value) {
         if (this.arrayOfBoard[selected] == 0) {
             this.arrayOfBoard[selected] = value;
@@ -108,7 +90,6 @@ public class xoModel {
             System.err.println("This block had value!!");
         }
     }
-=======
 
     int checkTurn(int turn) {
         int afterMod = turn%2;
@@ -119,13 +100,12 @@ public class xoModel {
              symbolXO = 1;
         }
         return symbolXO;
-    }   
+    }
+
 
     public void setArrayOfBoard(int i,int val) {
         this.arrayOfBoard[i] = val;
     }
-
->>>>>>> 084582572b2acbd743a1d7e610de6eb847a6571f
     
     public boolean checkDiagoanl(int player) {
         boolean result = false;
@@ -135,10 +115,6 @@ public class xoModel {
             } else if (this.arrayOfBoard[2] == player && this.arrayOfBoard[4] == player && this.arrayOfBoard[6] == player) {
                 result = true;
             }
-        
-
         return result;
     }
-
-
 }

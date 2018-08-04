@@ -25,7 +25,7 @@ public class xoModelTest {
     @Test
     public void testGetTurn() {
         xoModel instance = new xoModel();
-        int expResult = 0;
+        int expResult = 1;
         int result = instance.getTurn();
         assertEquals(expResult, result);
     }
