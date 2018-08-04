@@ -23,6 +23,7 @@ public class xoModeltest {
     xoModel xoModel = new xoModel();
     
     @Test
+<<<<<<< HEAD
     public void testUserModel() {
         //try to get player 1 and 2.
         assertEquals("Player1", xoModel.getPlayer1());
@@ -34,5 +35,21 @@ public class xoModeltest {
         //try to return value from array by method.
         assertEquals(xoModel.getArrayOfBoard()[1], 2);
         assertEquals(xoModel.getArrayOfBoard()[2], 1);
+=======
+    public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้False() {
+       xoModel xs = new xoModel();
+       
+        assertEquals(false, xs.checkDiagoanl(1));
+>>>>>>> 084582572b2acbd743a1d7e610de6eb847a6571f
     }
+    @Test
+    public void เทสฟังก์ชั่นชื่อcheckDiagonalIsWinต้องได้True() {
+       xoModel xs = new xoModel();
+       xs.setArrayOfBoard(0,1);
+       xs.setArrayOfBoard(4,1);
+       xs.setArrayOfBoard(8,1);
+        assertEquals(true, xs.checkDiagoanl(1));
+    }
+    
+    
 }
